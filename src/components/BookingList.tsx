@@ -1,7 +1,7 @@
 'use client'
 import { AppDispatch, useAppSelector } from "@/redux/store"
 import { useDispatch, UseDispatch } from "react-redux"
-import { removeReservation } from "@/redux/features/bookSlice"
+import { removeBooking } from "@/redux/features/bookSlice"
 
 export default function ReservationCart(){
 
@@ -25,7 +25,7 @@ export default function ReservationCart(){
                     <div className="text-sm">tel: {bookingItem.tel}</div>
                     <div className="text-md">Venue: {bookingItem.venue}</div>
                     <div className="text-sm">Date: {bookingItem.bookDate}</div>
-                    <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 text-white shadow-sm" onClick={() => dispatch(removeReservation(bookingItem))}>
+                    <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-2 text-white shadow-sm" onClick={() => dispatch(removeBooking(bookingItem))}>
                         Remove
                     </button>
                 </div>

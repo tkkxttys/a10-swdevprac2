@@ -10,10 +10,10 @@ export const cartSlice = createSlice ({
     name: "cart",
     initialState,
     reducers: {
-        addReservation: (state, action: PayloadAction<BookingItem>) => {
+        addBooking: (state, action: PayloadAction<BookingItem>) => {
             state.bookItems.push(action.payload)
         },
-        removeReservation: (state, action: PayloadAction<BookingItem>) => {
+        removeBooking: (state, action: PayloadAction<BookingItem>) => {
             const remainItems = state.bookItems.filter((obj: { nameLastname: string; tel: string; venue: string; bookDate: string; }) => {
                 return ((obj.nameLastname !== action.payload.nameLastname) 
                 || (obj.tel !== action.payload.tel)
@@ -25,5 +25,5 @@ export const cartSlice = createSlice ({
     }
 })
 
-export const {addReservation, removeReservation} = cartSlice.actions
+export const {addBooking, removeBooking} = cartSlice.actions
 export default cartSlice.reducer

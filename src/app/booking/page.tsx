@@ -154,7 +154,7 @@ export default function Reservations() {
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
-import { addReservation } from "@/redux/features/bookSlice";
+import { addBooking } from "@/redux/features/bookSlice";
 import { TextField, Button } from "@mui/material";
 import LocationDateReserve from "@/components/DateReserve";
 import dayjs, { Dayjs } from "dayjs";
@@ -176,7 +176,7 @@ export default function Reservations() {
                 venue: venue,
                 bookDate: dayjs(bookingDate).format("YYYY/MM/DD"),
             };
-            dispatch(addReservation(item));
+            dispatch(addBooking(item));
         }
     };
 
