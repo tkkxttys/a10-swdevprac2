@@ -31,10 +31,10 @@ export default bookSlice.reducer*/
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type BookState = {
-    bookItems: BookingItem[]
+    bookItems: BookingItem[];
 }
 
-const initialState: BookState = {bookItems:[]}
+const initialState: BookState = { bookItems: [] }
 
 export const bookSlice = createSlice({
     name: "book",
@@ -43,13 +43,11 @@ export const bookSlice = createSlice({
         addBooking: (state, action: PayloadAction<BookingItem>) => {
             const index = state.bookItems.findIndex(
                 (item) =>
-                    item.nameLastname === action.payload.nameLastname &&
-                    item.tel === action.payload.tel &&
                     item.venue === action.payload.venue &&
                     item.bookDate === action.payload.bookDate
             );
             if (index !== -1) {
-                // ถ้ามีการจองในสถานที่เดียวกันและวันเดียวกัน ให้แทนที่ข้อมูลเดิม
+                // ถ้ามีการจองในสถานที่และวันเดียวกัน ให้แทนที่การจองเดิม
                 state.bookItems[index] = action.payload;
             } else {
                 // ถ้าไม่มีการจองเดิม ให้เพิ่มการจองใหม่
