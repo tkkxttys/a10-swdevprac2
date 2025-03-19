@@ -3,7 +3,7 @@ const nextConfig = {
     images: {
         domains: ['drive.google.com']
     },
-    async headers() {
+    /*async headers() {
         return [
             {
                 // matching all API routes
@@ -16,7 +16,7 @@ const nextConfig = {
                 ]
             }
         ]
-    }
+    }*/
 };
 
 export default nextConfig;
