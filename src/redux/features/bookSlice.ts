@@ -6,8 +6,8 @@ type BookState = {
 
 const initialState: BookState = {bookItems:[]}
 
-export const cartSlice = createSlice ({
-    name: "cart",
+export const bookSlice = createSlice ({
+    name: "book",
     initialState,
     reducers: {
         addBooking: (state, action: PayloadAction<BookingItem>) => {
@@ -25,5 +25,5 @@ export const cartSlice = createSlice ({
     }
 })
 
-export const {addBooking, removeBooking} = cartSlice.actions
-export default cartSlice.reducer
+export const {addBooking, removeBooking} = bookSlice.actions
+export default bookSlice.reducer
